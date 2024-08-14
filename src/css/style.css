@@ -1,0 +1,122 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    user-select: none;
+}
+
+body {
+    background-color: #000000;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
+    z-index: 1;
+}
+
+.menu--play {
+    padding: 10px 35px;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    font-size: 25pt;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 0px #ffffff;
+    transition: all 0.1s;
+}
+
+.menu--play:active {
+    box-shadow: 0px 0px 0px 0px #ffffff;
+    transform: scale(0.95);
+}
+
+.menu--score {
+    /*display: none;*/
+    margin-bottom: 15px;
+    text-shadow: 2px 1px 3px #000000;
+}
+
+.menu--score span {
+    font-size: 30pt;
+    margin-left: 5px;
+    text-shadow: 2px 1px 3px #00dee6;
+    font-weight: bold;
+}
+
+@keyframes closeMenu {
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes openMenu {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 350px;
+    height: 100%;
+    z-index: 0;
+    animation-fill-mode: forwards;
+    animation-duration: 2.5s;
+    filter: blur(3px);
+}
+
+.main--canvas {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    width: 80%;
+    max-width: 500px;
+    max-height: 100%;
+    aspect-ratio: 1/1;
+    image-rendering: pixelated;
+}
+
+
+@keyframes onblur {
+    from {
+        filter: blur(0px);
+    }
+    to {
+        filter: blur(3px);
+    }
+}
+
+@keyframes offblur {
+    from {
+        filter: blur(3px);
+    }
+    to {
+        filter: blur(0px);
+    }
+}
