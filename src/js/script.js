@@ -95,6 +95,7 @@ function checkCollision() {
 }
 
 function checkEat(head) {
+    //Pior forma de se fazer isso :)
     foods.foods.forEach((food, index) => {
         if (head.x == food.x && head.y == food.y) {
             foods.foods.splice(index, 1)
